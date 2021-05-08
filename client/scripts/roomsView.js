@@ -7,6 +7,11 @@ var RoomsView = {
   },
 
   render: function() {
+  },
+
+  renderRoom: function (room) {
+    var $roomName = $('<roomName>').val(room).text(room);
+    RoomsView.$select.append($roomName);
   }
 
 };
