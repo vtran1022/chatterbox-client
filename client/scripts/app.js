@@ -21,6 +21,7 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
+      // append this data to the messagesView chat div
 
       callback();
     });

@@ -1,17 +1,10 @@
 var Messages = {
+  value: {},
 
+  get: function() {
+    return _.chain(Object.values(Messages.value)).sortBy('createdAt');
+  }
 
+//update function (put)
+//delete function (delete)
 };
-
-/*
-
-var message = {};
-message['username'] = App.username;
-message['text'] = $('#text').val();
-message['roomname'] = $('#rooms select').val();
-
-update: function(messages) {
-
-}
-
-*/

@@ -3,9 +3,6 @@ var Parse = {
   server: `https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/${window.CAMPUS}`,
 
   create: function(message, successCB, errorCB = null) {
-    // todo: save a message to the server
-    // type: 'Post',
-
     $.ajax({
       url: Parse.server,
       type: 'POST',
