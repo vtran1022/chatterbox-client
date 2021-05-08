@@ -1,5 +1,6 @@
 var MessagesView = {
 
+  // references the chat div
   $chats: $('#chats'),
 
   initialize: function() {
@@ -9,15 +10,23 @@ var MessagesView = {
     });
   },
 
-  render: function() {
-    //want to get the messages for storage array and append to the chat box
+  render: function(messages) {
+    MessagesView.$chats.html(''); // clearing the chats div everytime
+    messages.forEach(message => {
+      MessagesView.renderMessage(message);
+    });
+
     MessageView.$chats.html('');
     Messages.get();
     Messages.each(message => MessagesView.renderMessage(message));
   },
 
   renderMessage: function (message) {
-    var $note = MessageView.render(message);
-    MessagesView.$chats.append($note);
+    var $message = MessageView.render(message);
+    MessagesView.$chats.prepend($message);
+  },
+
+  handleClick: function (event) {
+
   }
 };
